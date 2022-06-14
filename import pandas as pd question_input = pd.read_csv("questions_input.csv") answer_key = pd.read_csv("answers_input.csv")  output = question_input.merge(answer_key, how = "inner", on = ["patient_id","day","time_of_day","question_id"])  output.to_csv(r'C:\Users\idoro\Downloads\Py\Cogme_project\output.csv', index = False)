@@ -1,0 +1,7 @@
+import pandas as pd
+question_input = pd.read_csv("questions_input.csv")
+answer_key = pd.read_csv("answers_input.csv")
+
+output = question_input.merge(answer_key, how = "inner", on = ["patient_id","day","time_of_day","question_id"])
+
+output.to_csv(r'C:\Users\idoro\Downloads\Py\Cogme_project\output.csv', index = False)
